@@ -1,10 +1,14 @@
-a = 73
-b = 10
-c = 55
+money_capital = 20000
+salary = 5000
+spend = 6000
+increase = 0.05
+i = 0
 
-condition_1 = a < 45
-condition_2 = b < 45
-condition_3 = c < 45 # TODO записать условие, что только третье число меньше 45
+while True:
+    money_capital = money_capital + salary - spend
+    spend = spend + (spend * increase)
+    if money_capital <= 0:
+        break
+    i+=1
 
-if condition_1 or condition_2 or condition_3 :
-    print("Одно из чисел меньше 45")
+print("Количество месяцев, которое можно протянуть без долгов:", i)
